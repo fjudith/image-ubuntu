@@ -1,5 +1,6 @@
 def jenkinsfile
 node {
+    sh 'env'
     checkout([
         $class: 'GitSCM',
         poll: false,
