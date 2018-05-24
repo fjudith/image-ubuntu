@@ -1,3 +1,4 @@
+def jenkinsfile
 node {
     checkout([
         $class: 'GitSCM',
@@ -5,5 +6,7 @@ node {
         branches: [[name: 'jrmtb/distributed-build']],
         userRemoteConfigs: [[url: 'https://github.com/scaleway/image-tools.git']]
     ])
-    load 'Jenkinsfile'
+    jenkinsfile = load 'Jenkinsfile'
 }
+
+jenkinsfile()
